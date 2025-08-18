@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+st.set_page_config(page_title="Sales & Recs", page_icon="🛒", layout="wide")
 
 # Load your processed data
 @st.cache_data
