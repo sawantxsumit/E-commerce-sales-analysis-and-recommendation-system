@@ -6,4 +6,3 @@ matplotlib
 joblib
 seaborn
 yellowbrick
-collections
