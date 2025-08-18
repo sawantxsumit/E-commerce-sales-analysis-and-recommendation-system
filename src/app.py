@@ -4,23 +4,23 @@ import os
 
 st.set_page_config(page_title="Sales & Recs", page_icon="🛒", layout="wide")
 
-# DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
 
-# @st.cache_data
-# def load_csv(filename):
-#     file_path = os.path.join(DATA_DIR, filename)
-#     return pd.read_csv(file_path)
+@st.cache_data
+def load_csv(filename):
+    file_path = os.path.join(DATA_DIR, filename)
+    return pd.read_csv(file_path)
 
-# # Load your processed data
-# customer_data = load_csv("customer_data_cleaned.csv")
-# df = load_csv("ecommerce_data_clean.csv")
-# merged_data = load_csv("merged_data.csv")
-# top_products = load_csv("top_products_per_cluster.csv")
+# Load your processed data
+customer_data = load_csv("customer_data_cleaned.csv")
+df = load_csv("ecommerce_data_clean.csv")
+merged_data = load_csv("merged_data.csv")
+top_products = load_csv("top_products_per_cluster.csv")
 
-customer_data = pd.read_csv("data/processed/customer_data_cleaned.csv")
-df = pd.read_csv("data/processed/ecommerce_data_clean.csv")
-merged_data = pd.read_csv("data/processed/merged_data.csv")
-top_products = pd.read_csv("data/processed/top_products_per_cluster.csv")
+# customer_data = pd.read_csv("data/processed/customer_data_cleaned.csv")
+# df = pd.read_csv("data/processed/ecommerce_data_clean.csv")
+# merged_data = pd.read_csv("data/processed/merged_data.csv")
+# top_products = pd.read_csv("data/processed/top_products_per_cluster.csv")
 
 
 
