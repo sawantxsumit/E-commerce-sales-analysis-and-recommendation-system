@@ -1,12 +1,24 @@
 import streamlit as st
 import pandas as pd
-# import joblib
+import os
+
 st.set_page_config(page_title="Sales & Recs", page_icon="🛒", layout="wide")
 
-# Load your processed data
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
+
 @st.cache_data
-def load_data():
-    return pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/customer_data.csv")
+def load_csv(filename):
+    file_path = os.path.join(DATA_DIR, filename)
+    return pd.read_csv(file_path)
+
+# Load your processed data
+customer_data = load_csv("customer_data_cleaned.csv")
+df = load_csv("ecommerce_data_clean.csv")
+merged_data = load_csv("merged_data.csv")
+top_products = load_csv("top_products_per_cluster.csv")
+
+
+
 
 st.title("📊 Sales Analysis & Recommendation System")
 
@@ -17,12 +29,12 @@ st.sidebar.text("Try customer id : 12350 , 14346 , 18150 ,16293 ,18280")
 
 
 #Load data
-customer_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/customer_data_cleaned.csv")
-df=pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/ecommerce_data_clean.csv")
-merged_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/merged_data.csv")   # customer-cluster info
-top_products = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/top_products_per_cluster.csv")  # top products by cluster
+# customer_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/customer_data_cleaned.csv")
+# df=pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/ecommerce_data_clean.csv")
+# merged_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/merged_data.csv")   # customer-cluster info
+# top_products = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/top_products_per_cluster.csv")  # top products by cluster
 
-data = load_data()
+# data = load_data()
 
 def recommend_products(customer_id, merged_df, top_products_df, n=5):
     # Step 1: Find customer cluster
