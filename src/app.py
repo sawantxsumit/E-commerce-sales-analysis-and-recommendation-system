@@ -29,7 +29,7 @@ st.title("📊 Sales Analysis & Recommendation System")
 # Sidebar for user inputs
 st.sidebar.header("Customer Input")
 customer_id = st.sidebar.text_input("Enter Customer ID:")
-st.sidebar.text("Try customer id : 12350 , 14346 , 18150 ,16293 ,18280")
+st.sidebar.text("Try customer id :\n 12350 , 14346 , 18150 ,16293 ,18280")
 
 
 #Load data
