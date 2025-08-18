@@ -100,7 +100,7 @@ else:
 # Global insights
 st.subheader("Top Products by Cluster")
 # (Use the top_10_products_per_cluster DataFrame you built)
-top_products = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/top_products_per_cluster.csv")
+# top_products = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/top_products_per_cluster.csv")
 
 # st.dataframe(top_products)
 st.subheader("Cluster 0")
