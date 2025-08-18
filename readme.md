@@ -1,7 +1,10 @@
-# 🛒 E-Commerce Sales Analysis & Recommendation System  
 
-A Streamlit web application that provides **sales analysis** and **personalized product recommendations** for e-commerce customers.  
-This project combines **data analysis, clustering, and machine learning** to identify customer patterns and suggest top products.  
+# 🛍️ E-Commerce Customer Segmentation
+
+This project performs **customer segmentation** for an e-commerce platform using **Machine Learning (KMeans clustering)**.  
+It helps in identifying customer groups for **targeted marketing, personalization, and business insights**.
+
+---
 
 🚀 **Live App**: [Click Here to Try](https://e-commerce-sales-analysis-and-recommendation-system-icql6evf3a.streamlit.app/)  
 
@@ -25,13 +28,31 @@ This project combines **data analysis, clustering, and machine learning** to ide
 ---
 
 ## 📂 Project Structure  
-📦 e-commerce-sales-analysis-and-recommendation-system
-┣ 📂 src # Source code
-┣ 📂 data # Dataset (if public)
-┣ 📜 app.py # Main Streamlit app
-┣ 📜 requirements.txt # Dependencies
-┣ 📜 README.md # Project documentation
+├── data/
+│ ├── raw/ # Original datasets
+│ ├── processed/ # Cleaned datasets (used for modeling)
+├── notebooks/
+│ ├── 1_data_cleaning.ipynb
+│ ├── 2_feature_engineering.ipynb
+│ ├── 3_model_training.ipynb
+├── app.py # Streamlit app for deployment
+├── requirements.txt # Dependencies
+└── README.md
 
+
+
+---
+
+## ⚙️ Workflow
+
+1. **Data Cleaning** – Handle missing values, convert datatypes.  
+2. **Feature Engineering** – Extract features like favorite shopping day, country, etc.  
+3. **Data Scaling** – Normalize numerical features using `StandardScaler`.  
+4. **Dimensionality Reduction (PCA)** – Reduce feature space for better clustering.  
+5. **Clustering (KMeans)** – Segment customers into groups.  
+6. **Deployment** – Streamlit app for interactive visualization and prediction.
+
+---
 ## ⚙️ Installation & Usage  
 Clone the repository and run the app locally:  
 
@@ -53,3 +74,5 @@ streamlit run app.py
 👨‍💻 Author
 
 Developed by Sumit sawant 👋
+
+Linked in: www.linkedin.com/in/sumit-sawant-249370354
