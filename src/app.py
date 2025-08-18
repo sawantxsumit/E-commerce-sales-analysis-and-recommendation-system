@@ -17,6 +17,10 @@ df = load_csv("ecommerce_data_clean.csv")
 merged_data = load_csv("merged_data.csv")
 top_products = load_csv("top_products_per_cluster.csv")
 
+customer_data = pd.read_csv("data/processed/customer_data_cleaned.csv")
+df = pd.read_csv("data/processed/ecommerce_data_clean.csv")
+merged_data = pd.read_csv("data/processed/merged_data.csv")
+top_products = pd.read_csv("data/processed/top_products_per_cluster.csv")
 
 
 
