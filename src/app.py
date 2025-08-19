@@ -97,19 +97,71 @@ else:
     st.write("Enter a valid customer ID to see details.")
 
 
+
+
+# Cluster information
+clusters = {
+    "Cluster 0": {
+        "Profile": "Sporadic Shoppers with a Preference for Weekend Shopping",
+        "Insights": [
+            "Tend to spend less, with fewer transactions and products purchased.",
+            "Slight tendency to shop during weekends.",
+            "Low monthly spending variation.",
+            "Low cancellation frequency and rate.",
+            "Lower average transaction value."
+        ]
+    },
+    "Cluster 1": {
+        "Profile": "Infrequent Big Spenders with a High Spending Trend",
+        "Insights": [
+            "Moderate spending but infrequent transactions.",
+            "High spending trend that has been increasing.",
+            "Prefer shopping late in the day, mostly in the UK.",
+            "Medium cancellation rate.",
+            "High average transaction value."
+        ]
+    },
+    "Cluster 2": {
+        "Profile": "Frequent High-Spenders with a High Rate of Cancellations",
+        "Insights": [
+            "High total spend with many unique products.",
+            "Frequent transactions with high cancellation rate.",
+            "Tend to shop early in the day.",
+            "Spending patterns vary significantly month-to-month.",
+            "Despite high spending, trend may be declining."
+        ]
+    }
+}
+
+st.title("Customer Segmentation Explorer")
+
+# Dropdown to select cluster
+selected_cluster = st.selectbox("Select a cluster to explore:", list(clusters.keys()))
+
+# Display cluster profile
+st.subheader(f"🧑‍🤝‍🧑 {selected_cluster}")
+st.write(f"**Profile:** {clusters[selected_cluster]['Profile']}")
+
+# Display insights
+st.markdown("### Key Insights")
+for point in clusters[selected_cluster]['Insights']:
+    st.markdown(f"- {point}")
+    
 # Global insights
 st.subheader("Top Products by Cluster")
 # (Use the top_10_products_per_cluster DataFrame you built)
 
+select_cluster= st.selectbox("Select a cluster to view top products:", top_products['cluster'].unique())
+
 # st.dataframe(top_products)
-st.subheader("Cluster 0")
-cluster0 = top_products.loc[top_products['cluster'] == 0].head(10)
-st.dataframe(cluster0, use_container_width=True)
+st.subheader(f"Cluster {select_cluster}")
 
-st.subheader("Cluster 1")
-cluster1 = top_products.loc[top_products['cluster'] == 1].head(10)
-st.dataframe(cluster1, use_container_width=True)
-
-st.subheader("Cluster 2")
-cluster2 = top_products.loc[top_products['cluster'] == 2].head(10)
-st.dataframe(cluster2, use_container_width=True)
+if select_cluster==0:
+    cluster0 = top_products.loc[top_products['cluster'] == 0].head(10)
+    st.dataframe(cluster0, use_container_width=True)
+elif select_cluster==1:
+    cluster1 = top_products.loc[top_products['cluster'] == 1].head(10)
+    st.dataframe(cluster1, use_container_width=True)
+else:
+    cluster2 = top_products.loc[top_products['cluster'] == 2].head(10)
+    st.dataframe(cluster2, use_container_width=True)
