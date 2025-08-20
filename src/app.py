@@ -17,13 +17,6 @@ df = load_csv("ecommerce_data_clean.csv")
 merged_data = load_csv("merged_data.csv")
 top_products = load_csv("top_products_per_cluster.csv")
 
-# customer_data = pd.read_csv("data/processed/customer_data_cleaned.csv")
-# df = pd.read_csv("data/processed/ecommerce_data_clean.csv")
-# merged_data = pd.read_csv("data/processed/merged_data.csv")
-# top_products = pd.read_csv("data/processed/top_products_per_cluster.csv")
-
-
-
 st.title("📊 Sales Analysis & Recommendation System")
 
 # Sidebar for user inputs
@@ -31,14 +24,6 @@ st.sidebar.header("Customer Input")
 customer_id = st.sidebar.text_input("Enter Customer ID:")
 st.sidebar.text("Try customer id :\n 12350 , 14346 , 18150 ,16293 ,18280")
 
-
-#Load data
-# customer_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/customer_data_cleaned.csv")
-# df=pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/ecommerce_data_clean.csv")
-# merged_data = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/merged_data.csv")   # customer-cluster info
-# top_products = pd.read_csv("C:/Users/sawan/e-commerce_Project/data/processed/top_products_per_cluster.csv")  # top products by cluster
-
-# data = load_data()
 
 def recommend_products(customer_id, merged_df, top_products_df, n=5):
     # Step 1: Find customer cluster
